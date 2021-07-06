@@ -9,12 +9,14 @@ import { AppRoutingModule } from './app.routing.module';
 import { RodapeComponent } from './shared/components/rodape/rodape.component';
 import { TopoComponent } from './shared/components/topo/topo.component';
 import { MaterialModule } from './shared/material/material.module';
+import { AlertaComponent } from './shared/components/alerta/alerta.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopoComponent,
     RodapeComponent,
+    AlertaComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,6 +26,7 @@ import { MaterialModule } from './shared/material/material.module';
     AppRoutingModule,
     HttpClientModule
   ],
+  entryComponents: [AlertaComponent],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt' }],
   bootstrap: [AppComponent]
 })
