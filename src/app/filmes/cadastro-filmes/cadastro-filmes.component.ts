@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ValidarCamposService } from 'src/app/shared/components/campos/validar-campos.service';
 
 @Component({
@@ -34,7 +34,7 @@ export class CadastroFilmesComponent implements OnInit {
   }
 
   salvar(): void{
-    this.cadastro.markAllAsTouched;
+    this.cadastro.markAllAsTouched();
     if (this.cadastro.invalid) {
       return
     }

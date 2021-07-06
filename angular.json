@@ -8,11 +8,6 @@
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "",
-      "schematics": {
-        "@schematics/angular:component": {
-          "styleext": "scss"
-        }
-      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -135,10 +130,6 @@
   },
   "defaultProject": "angular-material-base",
   "schematics": {
-    "@schematics/angular:component": {
-      "prefix": "",
-      "styleext": "scss"
-    },
     "@schematics/angular:directive": {
       "prefix": ""
     }
