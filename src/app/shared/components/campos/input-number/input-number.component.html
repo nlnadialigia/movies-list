@@ -6,10 +6,10 @@
       Campo obrigatório
     </mat-error>
     <mat-error *ngIf="validacao.hasErrorValidate(formControl, 'min')">
-      Valor mínimo igual a 0
+      Valor mínimo igual a {{validacao.lengthValidate(formControl, 'min')}}
     </mat-error>
     <mat-error *ngIf="validacao.hasErrorValidate(formControl, 'max')">
-      Valor máximo igual a 10
+      Valor máximo igual a {{validacao.lengthValidate(formControl, 'max')}}
     </mat-error>
   </mat-form-field>
 </div>
