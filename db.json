@@ -109,6 +109,16 @@
       "urlIMDb": "https://www.imdb.com/title/tt2527338/?ref_=vi_md_ti",
       "genero": "Aventura",
       "id": 11
+    },
+    {
+      "titulo": "Grease: Nos Tempos da Brilhantina",
+      "urlFoto": "https://www.imdb.com/title/tt0077631/mediaviewer/rm371555328/?ref_=tt_ov_i",
+      "dtLancamento": "1978-06-12T03:00:00.000Z",
+      "descricao": "Good girl Sandy Olsson and greaser Danny Zuko fell in love over the summer. When they unexpectedly discover they're now in the same high school, will they be able to rekindle their romance?",
+      "nota": 7.2,
+      "urlIMDb": "https://www.imdb.com/title/tt0077631/?ref_=hm_stp_pvs_piv_tt_t_9",
+      "genero": "Romance",
+      "id": 12
     }
   ]
 }
