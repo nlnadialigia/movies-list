@@ -219,6 +219,16 @@
       "urlIMDb": "",
       "genero": "Ficção Científica",
       "id": 22
+    },
+    {
+      "titulo": "Um Sonho de Liberdade",
+      "urlFoto": "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX67_CR0,0,67,98_AL_.jpg",
+      "dtLancamento": "1994-09-23T03:00:00.000Z",
+      "descricao": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+      "nota": 9.3,
+      "urlIMDb": "https://www.imdb.com/title/tt0111161/?ref_=ttrel_rel_tt",
+      "genero": "Drama",
+      "id": 23
     }
   ]
 }
