@@ -87,7 +87,7 @@ export class CadastroFilmesComponent implements OnInit {
             descricao: 'Não foi possível salvar o registro. Favor tentar mais tarde',
             btnSucesso: 'Fechar',
             corBtnSucesso: 'warn'
-          }
+          } as Alerta
         }
         this.dialog.open(AlertaComponent, config)
       }
