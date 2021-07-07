@@ -10,6 +10,13 @@
   }
 }
 
+.mat-card-image {
+  width: auto;
+  margin: 10px auto;
+  display: block;
+}
+
+
 @media screen and (min-width: 600px) {
   .home-content {
     .home-card {
