@@ -1,6 +1,20 @@
 <mat-toolbar class="app-title">Filmes Cadastrados</mat-toolbar>
+<mat-card class="filtro-listagem center float-left margin10">
+  <form [formGroup]="filtrosListagem">
+    <div class="width50 float-left">
+      <div class="padding10">
+        <dio-input-text titulo="Pesquisar por nome" controlName="texto" [formGroup]="filtrosListagem"></dio-input-text>
+      </div>
+    </div>
+    <div class="width50 float-left">
+      <div class="padding10">
+        <dio-input-select titulo="Gênero" controlName="genero" [opcoes]="generos" [formGroup]="filtrosListagem">
+        </dio-input-select>
+      </div>
+    </div>
+  </form>
+</mat-card>
 <div class="home-content" infiniteScroll (scrolled)="onScroll()">
-
   <mat-card class="home-card" *ngFor="let filme of filmes">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
@@ -15,5 +29,4 @@
       <button color="accent" mat-raised-button>Abrir</button>
     </mat-card-actions>
   </mat-card>
-
 </div>
