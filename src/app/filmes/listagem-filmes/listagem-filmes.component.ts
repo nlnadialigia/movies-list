@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { debounceTime } from 'rxjs/operators';
 import { FilmesService } from 'src/app/core/filmes.service';
 import { ConfigParams } from 'src/app/shared/models/config-params';
 import { Filme } from 'src/app/shared/models/filme';
@@ -18,6 +19,7 @@ export class ListagemFilmesComponent implements OnInit {
   filmes: Filme[] = []
   generos: Array<string>
   filtrosListagem: FormGroup
+  readonly semFoto = 'https://www2.camara.leg.br/atividade-legislativa/comissoes/comissoes-permanentes/cindra/imagens/sem.jpg.gif/image'
 
   constructor(
     private filmesServices: FilmesService,
@@ -30,12 +32,14 @@ export class ListagemFilmesComponent implements OnInit {
       genero: ['']
     })
 
-    this.filtrosListagem.get('texto').valueChanges.subscribe(
-      (val:string) => {
-        this.config.pesquisa = val
-        this.resetarConsulta()
-      }
-    )
+    this.filtrosListagem.get('texto').valueChanges
+      .pipe(debounceTime(400))
+      .subscribe(
+        (val:string) => {
+          this.config.pesquisa = val
+          this.resetarConsulta()
+        }
+      )
 
     this.filtrosListagem.get('genero').valueChanges.subscribe(
       (val:string) => {
@@ -65,3 +69,4 @@ export class ListagemFilmesComponent implements OnInit {
     .subscribe((filmes: Filme[]) => this.filmes.push(...filmes))
   }
 }
+
