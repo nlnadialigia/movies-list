@@ -53,7 +53,12 @@ export class CadastroFilmesComponent implements OnInit {
 
     const filme = this.cadastro.getRawValue() as Filme
 
-    this.salvar(filme)
+    if (this.id) {
+      filme.id = this.id
+      this.editar(filme)
+    } else {
+      this.salvar(filme)
+    }
   }
 
   reiniciarForm(): void {
@@ -79,7 +84,7 @@ export class CadastroFilmesComponent implements OnInit {
             this.reiniciarForm()
           }
         })
-       },
+      },
       () => {
         const config = {
           data: {
@@ -91,8 +96,37 @@ export class CadastroFilmesComponent implements OnInit {
         }
         this.dialog.open(AlertaComponent, config)
       }
-    )
+      )
   }
+
+  private editar(filme: Filme): void {
+    this.filmesService.editar(filme).subscribe(
+      () => {
+        const config = {
+          data: {
+            descricao: 'Registro atualizado com sucesso!',
+            btnSucesso: 'Ir para listagem',
+          } as Alerta
+        }
+        const dialogRef = this.dialog.open(AlertaComponent, config)
+        dialogRef.afterClosed().subscribe((opcao: boolean) => {
+          this.router.navigateByUrl('filmes')
+        })
+      },
+      () => {
+        const config = {
+          data: {
+            titulo: 'Erro ao editar o registro!',
+            descricao: 'Não foi possível editar o registro. Favor tentar mais tarde',
+            btnSucesso: 'Fechar',
+            corBtnSucesso: 'warn'
+          } as Alerta
+        }
+        this.dialog.open(AlertaComponent, config)
+      }
+      )
+  }
+
 
   private criarFormulario(filme: Filme): void {
     this.cadastro = this.fb.group({

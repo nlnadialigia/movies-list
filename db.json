@@ -99,16 +99,6 @@
       "urlIMDb": "https://www.imdb.com/title/tt1618434/",
       "genero": "Comédia",
       "id": 10
-    },
-    {
-      "titulo": "Um Sonho de Liberdade",
-      "urlFoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjJDwkbR6SjqswH4XT7tsGe-vksgUW9zbHci2-AqdvnWfR7hz5aCPlLWvtbnjlswUiGGQ&usqp=CAU",
-      "dtLancamento": "1994-09-23T03:00:00.000Z",
-      "descricao": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
-      "nota": 9.3,
-      "urlIMDb": "https://www.imdb.com/title/tt0111161/?ref_=ttrel_rel_tt",
-      "genero": "Drama",
-      "id": 23
     }
   ]
 }
