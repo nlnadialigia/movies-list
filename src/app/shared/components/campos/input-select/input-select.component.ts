@@ -8,17 +8,17 @@ import { ValidarCamposService } from '../validar-campos.service';
   styleUrls: ['./input-select.component.css']
 })
 export class InputSelectComponent {
+  @Input() titulo: string;
 
-  @Input() titulo: string
-  @Input() formGroup: FormGroup
-  @Input() controlName: string
-  @Input() opcoes: Array<string>
+  @Input() formGroup: FormGroup;
 
-  constructor(
-    public validacao: ValidarCamposService
-  ) { }
+  @Input() controlName: string;
+
+  @Input() opcoes: Array<string>;
+
+  constructor(public validacao: ValidarCamposService) {}
 
   get formControl(): AbstractControl {
-    return this.formGroup.controls[this.controlName]
+    return this.formGroup.controls[this.controlName];
   }
 }

@@ -8,7 +8,6 @@ import { Alerta } from '../../models/alerta';
   styleUrls: ['./alerta.component.css']
 })
 export class AlertaComponent implements OnInit {
-
   alerta = {
     titulo: 'SUCESSO',
     descricao: 'Registro cadastrado com sucesso',
@@ -17,12 +16,12 @@ export class AlertaComponent implements OnInit {
     corBtnSucesso: 'accent',
     corBtnCancelar: 'warn',
     possuirBtnFechar: false
-  } as Alerta
-
+  } as Alerta;
 
   constructor(
     public dialogRef: MatDialogRef<AlertaComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Alerta) {}
+    @Inject(MAT_DIALOG_DATA) public data: Alerta
+  ) {}
 
   onNoClick(): void {
     this.dialogRef.close();
@@ -30,14 +29,17 @@ export class AlertaComponent implements OnInit {
 
   ngOnInit() {
     if (this.data) {
-      this.alerta.titulo = this.data.titulo || this.alerta.titulo
-      this.alerta.descricao = this.data.descricao || this.alerta.descricao
-      this.alerta.btnSucesso = this.data.btnSucesso || this.alerta.btnSucesso
-      this.alerta.btnCancelar = this.data.btnCancelar || this.alerta.btnCancelar
-      this.alerta.corBtnSucesso = this.data.corBtnSucesso || this.alerta.corBtnSucesso
-      this.alerta.corBtnCancelar = this.data.corBtnCancelar || this.alerta.corBtnCancelar
-      this.alerta.possuirBtnFechar = this.data.possuirBtnFechar || this.alerta.possuirBtnFechar
+      this.alerta.titulo = this.data.titulo || this.alerta.titulo;
+      this.alerta.descricao = this.data.descricao || this.alerta.descricao;
+      this.alerta.btnSucesso = this.data.btnSucesso || this.alerta.btnSucesso;
+      this.alerta.btnCancelar =
+        this.data.btnCancelar || this.alerta.btnCancelar;
+      this.alerta.corBtnSucesso =
+        this.data.corBtnSucesso || this.alerta.corBtnSucesso;
+      this.alerta.corBtnCancelar =
+        this.data.corBtnCancelar || this.alerta.corBtnCancelar;
+      this.alerta.possuirBtnFechar =
+        this.data.possuirBtnFechar || this.alerta.possuirBtnFechar;
     }
   }
-
 }

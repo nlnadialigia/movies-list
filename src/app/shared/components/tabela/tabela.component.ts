@@ -9,10 +9,12 @@ import { MatSort } from '@angular/material/sort';
 })
 export class TabelaComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+
   @ViewChild(MatSort, { static: true }) sort: MatSort;
+
   dataSource: any[] = [
-    {id: 1, name: 'teste'},
-    {id: 2, name: 'teste 2'}
+    { id: 1, name: 'teste' },
+    { id: 2, name: 'teste 2' }
   ];
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */

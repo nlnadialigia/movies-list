@@ -8,16 +8,15 @@ import { ValidarCamposService } from '../validar-campos.service';
   styleUrls: ['./input-date.component.css']
 })
 export class InputDateComponent {
+  @Input() titulo: string;
 
-  @Input() titulo: string
-  @Input() formGroup: FormGroup
-  @Input() controlName: string
+  @Input() formGroup: FormGroup;
 
-  constructor(
-    public validacao: ValidarCamposService
-  ) { }
+  @Input() controlName: string;
+
+  constructor(public validacao: ValidarCamposService) {}
 
   get formControl(): AbstractControl {
-    return this.formGroup.controls[this.controlName]
+    return this.formGroup.controls[this.controlName];
   }
 }

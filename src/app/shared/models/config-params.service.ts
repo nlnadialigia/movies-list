@@ -6,8 +6,7 @@ import { ConfigParams } from './config-params';
   providedIn: 'root'
 })
 export class ConfigParamsService {
-
-  constructor() { }
+  constructor() {}
 
   configurarParametros(config: ConfigParams): HttpParams {
     let httpParams = new HttpParams();
@@ -21,11 +20,14 @@ export class ConfigParamsService {
       httpParams = httpParams.set('q', config.pesquisa);
     }
     if (config.campo) {
-      httpParams = httpParams.set(config.campo.tipo, config.campo.valor.toString());
+      httpParams = httpParams.set(
+        config.campo.tipo,
+        config.campo.valor.toString()
+      );
     }
     httpParams = httpParams.set('_sort', 'id');
     httpParams = httpParams.set('_order', 'desc');
 
-    return httpParams
+    return httpParams;
   }
 }
