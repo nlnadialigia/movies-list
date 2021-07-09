@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ConfigParams } from '../shared/models/config-params';
@@ -25,5 +25,9 @@ export class FilmesService {
     const configParams = this.configService.configurarParametros(config)
 
     return this.http.get<Filme[]>(url, {params: configParams});
+  }
+
+  visualizar(id: number): Observable<Filme> {
+    return this.http.get<Filme>(url + id)
   }
 }

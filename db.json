@@ -119,26 +119,6 @@
       "urlIMDb": "https://www.imdb.com/title/tt0111161/?ref_=ttrel_rel_tt",
       "genero": "Drama",
       "id": 23
-    },
-    {
-      "titulo": "filme sem foto",
-      "urlFoto": "",
-      "dtLancamento": "2021-07-08T03:00:00.000Z",
-      "descricao": "",
-      "nota": 0,
-      "urlIMDb": "",
-      "genero": "Comédia",
-      "id": 24
-    },
-    {
-      "titulo": "descricao em varias linhas",
-      "urlFoto": "",
-      "dtLancamento": "2021-07-12T03:00:00.000Z",
-      "descricao": "linha1\nlinha2\nlinha3",
-      "nota": 3,
-      "urlIMDb": "",
-      "genero": "Terror",
-      "id": 25
     }
   ]
 }

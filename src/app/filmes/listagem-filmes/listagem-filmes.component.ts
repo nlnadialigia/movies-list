@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { debounceTime } from 'rxjs/operators';
 import { FilmesService } from 'src/app/core/filmes.service';
 import { ConfigParams } from 'src/app/shared/models/config-params';
@@ -19,11 +20,12 @@ export class ListagemFilmesComponent implements OnInit {
   filmes: Filme[] = []
   generos: Array<string>
   filtrosListagem: FormGroup
-  readonly semFoto = 'https://www2.camara.leg.br/atividade-legislativa/comissoes/comissoes-permanentes/cindra/imagens/sem.jpg.gif/image'
+  readonly semFoto = 'https://www.termoparts.com.br/wp-content/uploads/2017/10/no-image.jpg'
 
   constructor(
     private filmesServices: FilmesService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -53,13 +55,17 @@ export class ListagemFilmesComponent implements OnInit {
     this.listarFilmes()
   }
 
-  private resetarConsulta():void {
-    this.config.pagina = 0
-    this.filmes = []
+  onScroll(): void {
     this.listarFilmes()
   }
 
-  onScroll(): void {
+  abrir(id: number): void {
+    this.router.navigateByUrl('/filmes/' + id)
+  }
+
+  private resetarConsulta():void {
+    this.config.pagina = 0
+    this.filmes = []
     this.listarFilmes()
   }
 
