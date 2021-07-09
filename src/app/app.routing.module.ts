@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { CadastroFilmesComponent } from './filmes/cadastro-filmes/cadastro-filmes.component';
-import { FilmesModule } from './filmes/filmes.module';
-import { ListagemFilmesComponent } from './filmes/listagem-filmes/listagem-filmes.component';
-import { VisualizarFilmesComponent } from './filmes/visualizar-filmes/visualizar-filmes.component';
+import { NgModule } from '@angular/core'
+import { RouterModule, Routes } from '@angular/router'
+import { CadastroFilmesComponent } from './filmes/cadastro-filmes/cadastro-filmes.component'
+import { FilmesModule } from './filmes/filmes.module'
+import { ListagemFilmesComponent } from './filmes/listagem-filmes/listagem-filmes.component'
+import { VisualizarFilmesComponent } from './filmes/visualizar-filmes/visualizar-filmes.component'
 
 const routes: Routes = [
 
@@ -21,18 +21,29 @@ const routes: Routes = [
       },
       {
         path: 'cadastro',
-        component: CadastroFilmesComponent,
-        pathMatch: 'full'
+        children: [
+          {
+            path: '',
+            component: CadastroFilmesComponent,
+            pathMatch: 'full'
+          },
+          {
+            path: ':id',
+            component: CadastroFilmesComponent,
+            pathMatch: 'full'
+          }
+        ]
       },
       {
         path: ':id',
-        component: VisualizarFilmesComponent
+        component: VisualizarFilmesComponent,
+        pathMatch: 'full'
       }
     ]
   },
   { path: '**', redirectTo: 'filmes' },
 
-];
+]
 
 @NgModule({
   imports: [

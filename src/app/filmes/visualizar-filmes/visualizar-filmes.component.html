@@ -1,27 +1,17 @@
 <mat-list *ngIf="filme; else semRegistro">
-  <mat-list-item>
-    Titulo: {{filme.titulo}}
-  </mat-list-item>
-
-  <mat-list-item>
-    Data de lançamento: {{filme.dtLancamento | date: 'dd/MM/yyyy'}}
-  </mat-list-item>
-
-  <mat-list-item>
-    Descrição: {{filme. descricao}}
-  </mat-list-item>
-
-  <mat-list-item>
-    Nota:&nbsp;
-    <a [href]="filme.urlIMDb" target="_blank"> {{filme.nota}} </a>
-  </mat-list-item>
-
-  <mat-list-item>
-    {{filme.genero}}
-  </mat-list-item>
-
+  <mat-list-item>Titulo: {{filme.titulo}}</mat-list-item>
+  <mat-list-item>Data de lançamento: {{filme.dtLancamento | date: 'dd/MM/yyyy'}}</mat-list-item>
+  <mat-list-item class="quebrar-linha">Descrição: {{filme. descricao}}</mat-list-item>
+  <mat-list-item>Nota:&nbsp;<a [href]="filme.urlIMDb" target="_blank"> {{filme.nota}} </a></mat-list-item>
+  <mat-list-item>{{filme.genero}}</mat-list-item>
   <img mat-card-image [src]="filme.urlFoto || semFoto" alt="Foto da capa">
 
+  <mat-card>
+    <mat-card-actions>
+      <button color="accent" (click)="editar()" mat-raised-button>Editar</button>
+      <button color="warn" (click)="excluirFilmes()" mat-raised-button>Excluir</button>
+    </mat-card-actions>
+  </mat-card>
 </mat-list>
 
 <ng-template #semRegistro>

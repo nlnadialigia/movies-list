@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
-import { debounceTime } from 'rxjs/operators';
-import { FilmesService } from 'src/app/core/filmes.service';
-import { ConfigParams } from 'src/app/shared/models/config-params';
-import { Filme } from 'src/app/shared/models/filme';
+import { Component, OnInit } from '@angular/core'
+import { FormBuilder, FormGroup } from '@angular/forms'
+import { Router } from '@angular/router'
+import { debounceTime } from 'rxjs/operators'
+import { FilmesService } from 'src/app/core/filmes.service'
+import { ConfigParams } from 'src/app/shared/models/config-params'
+import { Filme } from 'src/app/shared/models/filme'
 
 @Component({
   selector: 'dio-listagem-filmes',
@@ -37,14 +37,14 @@ export class ListagemFilmesComponent implements OnInit {
     this.filtrosListagem.get('texto').valueChanges
       .pipe(debounceTime(400))
       .subscribe(
-        (val:string) => {
+        (val: string) => {
           this.config.pesquisa = val
           this.resetarConsulta()
         }
       )
 
     this.filtrosListagem.get('genero').valueChanges.subscribe(
-      (val:string) => {
+      (val: string) => {
         this.config.campo = {tipo: 'genero', valor: val}
         this.resetarConsulta()
       }
@@ -63,7 +63,7 @@ export class ListagemFilmesComponent implements OnInit {
     this.router.navigateByUrl('/filmes/' + id)
   }
 
-  private resetarConsulta():void {
+  private resetarConsulta(): void {
     this.config.pagina = 0
     this.filmes = []
     this.listarFilmes()
