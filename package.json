@@ -7,9 +7,9 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "tsc --noEmit && eslint . --ext js,ts,json --quiet --fix",
     "e2e": "ng e2e",
-    "json": "json-server --watch db.json"
+    "json": "json-server --watch db.json",
+    "lint-staged": "tsc --noEmit && eslint . --ext js,ts,json --quiet --fix"
   },
   "private": true,
   "dependencies": {
